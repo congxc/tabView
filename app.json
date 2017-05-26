@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/tabList/tabList"
+    
+  ],
+  "window": {
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ff8252",
+    "navigationBarTitleText": "tabView",
+    "navigationBarTextStyle":"white"
+  },
+  
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

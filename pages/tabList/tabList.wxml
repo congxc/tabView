@@ -1,0 +1,55 @@
+<!--导入toast布局文件-->
+  <include src="../../toast.wxml"/>
+  <!--导入对话框布局文件-->
+  <include src="../../dialog.wxml"/>
+   
+<view class="custom_list {{custom_list_show?'show':''}}">
+    <view class="list_item" hover-class="list_item_pressed" data-value="全部"  bindtap="onCustomListItemClick">
+      全部
+    </view>
+    <view class="list_item" hover-class="list_item_pressed" data-value="未过期" bindtap="onCustomListItemClick">
+      未过期
+    </view>
+    <view class="list_item" hover-class="list_item_pressed" data-value="已过期" bindtap="onCustomListItemClick">
+      已过期
+    </view>
+</view>
+<view class="scroll_tabView">
+    <scroll-view scroll-x="true" scroll-left="{{tab_left}}" class="scroll_block" style="width:77%">
+      <view class="tab" bindtap="onTabClick" style="{{index==selectedIndex?'border-bottom: 4rpx solid #ff8252;color:#ff8252':'color:#7d7d7d'}};width:{{tabItemWidth}}px;min-width:{{tabItemMinWidth?tabItemMinWidth:''}}px;"  wx:for="{{tabText}}" wx-item='item' data-index="{{index}}">
+          {{item}}
+      </view>
+    </scroll-view>
+    <view class="custom_tab" bindtap="onCustomTabClick" style="width:23%}}">
+        <view class="custom_view" >
+          <view class="custom_view_normal" hover-class="normal_pressed">
+            <view class="custom_view_container">
+              <view class="custom" style="color:#ff8252">
+                {{custom_list_value}}
+              </view>
+              <image class="icon_expand" src="../../images/icon_expand.png"></image>          
+            </view>
+          </view>
+          <view class="custom_view_pressed" hover-class="pressed">
+            <view class="custom_view_container">
+              <view class="custom" style="color:#aeaeae">
+                {{custom_list_value}}
+              </view>
+              <image class="icon_expand" src="../../images/icon_expand_pressed.png"></image>
+            </view>          
+          </view>
+        </view>
+    </view>
+</view>
+
+<swiper class="swiper" current="{{selectedIndex}}" bindchange="onPageSelectd">
+    <block  wx:for="{{tabText}}" wx:for-key="{{index}}" wx:for-index="i">
+      <swiper-item class="swiper-item" >
+        <scroll-view scroll-y="true" style="width:100%;height:100%">
+              <view class="item"  style="position:relative;"  wx:for="{{items}}" wx:for-item="item" data-index="{{index}}" wx:for-key="{{index}}" bindtap="onItemClick">
+                  {{item}}
+              </view>
+        </scroll-view>
+      </swiper-item>   
+    </block>
+</swiper>

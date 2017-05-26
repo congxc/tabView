@@ -1,0 +1,11 @@
+<view class="dialog-view {{dialog_show?'show':''}}">
+        <view class="dialog-background"  style="position:relative;margin:50% auto;width:550rpx;height:362rpx;background-color:white;">
+          <image class="tip" src="../../images/icon_dialog.png" style="position:absolute;width:282rpx;height:220rpx;top:-130rpx;left:134rpx;"></image>
+          <image src="../../images/icon_close.png" catchtap="onClose" style="position:absolute;width:65rpx;height:65rpx;right:-20rpx;top:-20rpx;"></image>
+          <view class="content" style="height:274rpx;padding:110rpx 30rpx;color:#2e2e2e;text-align:center;">{{dialog_content}}</view>
+          <view class="btn-dialog" style="margin:0rpx 3rpx;height:88rpx">
+            <button class="btn-cancel" bindtap="onCancel"  hover-class="btn-cancel-hover" >取消</button>
+            <button class="btn-confirm" bindtap="onConfirm" hover-class="btn-confirm-hover">确定</button>
+          </view>
+        </view>
+</view>

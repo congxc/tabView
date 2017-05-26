@@ -1,0 +1,122 @@
+/* 基础样式 */
+view,scroll-view,swiper,swiper-item,icon,text,progress,button,checkbox-group,checkbox,form,input,label,picker,radio-group,radio,slider,switch,action-sheet,action-sheet-item,action-sheet-cancel,modal,toast,loading,navigator,audio,image,video,map,canvas {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+}
+page {  background: #ffffff;
+        height: 100%;
+        font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+checkbox-group,
+radio-group{
+        display:block;
+}
+:before,
+:after ,
+::before,
+::after{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+/* 自定义样式 */
+.container {
+  z-index: 0;
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+.background{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.toast-view{
+    z-index: 1;
+    position: fixed; 
+    width:450rpx;
+    min-height: 90rpx;
+    color: white;
+    text-align: center;
+    padding:30rpx 10rpx;
+    margin: 0px auto;
+    border-radius: 50rpx;
+    background-color: rgba(0, 0, 0, 0.521569);
+    opacity: 1; 
+    display: block; 
+    transform: rotate(0deg) scale(1) translate(0%, 100%); /*x方向平移0  y方向平移100% 表示隐藏*/
+    bottom: 0px;right: 0px;left: 0px; 
+  }
+/*向上平移动画 Toast*/
+.toast-view.show{ 
+      transform: rotate(0deg) scale(1) translate(0%,-150%);
+      transition: All 0.2s ease;
+      -ms-transform: rotate(0deg) scale(1) translate(0%,-150%);
+      -o-transform: rotate(0deg) scale(1) translate(0%,-150%); 
+      -moz-transform: rotate(0deg) scale(1) translate(0%,-150%);
+      -webkit-transform: rotate(0deg) scale(1) translate(0%,-150%); 
+      -ms-transition: All 0.2s ease; -o-transition: All 0.2s ease;
+      -moz-transition: All 0.2s ease; -webkit-transition: All 0.2s ease; }
+   
+/*提示对话框*/
+.dialog-view{
+    z-index: 5;
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1; 
+    display: block; 
+    transform: rotate(0deg) scale(1) translate(0%, 100%); /*x方向平移0  y方向平移100% 表示隐藏*/
+    transition: All 0.3s ease;
+    top:0px;bottom: 0px;right: 0px;left: 0px; 
+    box-sizing: border-box;
+}
+.dialog-view.show{
+  transform: rotate(0deg) scale(1) translate(0%,0%);
+  transition: All 0.3s ease;
+  -ms-transform: rotate(0deg) scale(1) translate(0%,0%);
+  -o-transform: rotate(0deg) scale(1) translate(0%,0%); 
+  -moz-transform: rotate(0deg) scale(1) translate(0%,0%);
+  -webkit-transform: rotate(0deg) scale(1) translate(0%,0%); 
+  -ms-transition: All 0.3s ease; -o-transition: All 0.3s ease;
+  -moz-transition: All 0.3s ease; -webkit-transition: All 0.3s ease;
+  }
+  .btn-dialog .btn-cancel{
+    border-radius: 32rpx;
+    color: #2e2e2e;
+    width:200rpx;height:64rpx;line-height:64rpx;float:left;background-color:#bebebe;
+    margin-left:50rpx; 
+  }
+  .btn-dialog .btn-confirm{
+    border-radius: 32rpx;
+    color: #ffffff;
+    width:200rpx;height:64rpx;line-height:64rpx;float:left;background-color:#ff8252;margin-left:60rpx;
+  }
+  .btn-dialog .btn-cancel-hover{
+    opacity: 0.5;
+  }
+  .btn-dialog .btn-confirm-hover{
+    opacity: 0.5;
+  }
+
+@-webkit-keyframes rotate{ 0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes rotate{0%{transform:rotate(0deg);}100%{ transform:rotate(360deg);}}
+.refreshView.roate,.loadMoreView.roate{
+   -moz-animation:rotate 1s infinite linear;
+  -webkit-animation:rotate 1s infinite linear;
+  animation:rotate 1s infinite linear;
+}
+ 
